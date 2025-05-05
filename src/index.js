@@ -2,14 +2,14 @@ const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
 // TODO: Add the missing query selectors:
-const score = document.querySelector('#score'); // Use querySelector() to get the score element.  may need to revisit later!
-const timerDisplay =  document.querySelector('#timer'); // use querySelector() to get the timer element.  may need to revisit later!
+const score = document.querySelector('#score'); // Use querySelector() to get the score element.  
+const timerDisplay =  document.querySelector('#timer'); // use querySelector() to get the timer element.  
 
 let time = 0;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "easy"; //updated from hard to easy for troubleshooting
+let difficulty = "normal"; 
 
 /**
  * Generates a random integer within a range.
@@ -115,7 +115,6 @@ return timeoutId;
 *
 */
 function showUp() {
-  console.log("showUp called"); //remove this later
   let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes); // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
@@ -130,7 +129,6 @@ function showUp() {
 *
 */
 function showAndHide(hole, delay)  {
-  console.log("showAndHide called for hole:", hole, "with delay", delay); //remove this later
   toggleVisibility(hole);
   const timeoutID = setTimeout(() => {
     toggleVisibility(hole);   // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
@@ -269,7 +267,6 @@ function stopGame(){
  * Note: Simply uncommenting `setDuration(10);` and `showUp();` is not enough. To make the game work, ensure all necessary functions listed above are called to initialize the score, timer, event listeners, and mole appearances. 
 */
 function startGame(){
-  console.log("startGame called"); /*remove this later*/
   clearScore();
   stopGame();   //optional
   setDuration(10);
